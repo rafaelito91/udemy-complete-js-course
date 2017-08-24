@@ -1,23 +1,33 @@
-// Lecture: Operators
+// Lecture if/else and comparisons
 
+var name = 'John';
 var age = 26;
-var actualYear = 2017;
-var birthYear = actualYear - age;
+var isMarried = 'yes';
 
-var randomNumber = actualYear - age * 2;
+if(isMarried == 'yes') {
+  console.log(name + ' is married!')
+} else {
+  console.log(name + ' will marry soon.');
+}
 
-// This precedence was obvious, but its not always like that.
-// http://codingheroes.io/resources/ is a good reference to it
+isMarried = false;
 
-console.log(birthYear);
-console.log(randomNumber);
+if(isMarried) {
+  console.log('YES');
+} else {
+  console.log('NO!');
+}
 
-var ageJohn = 30;
-var ageMark = 30;
+if(!isMarried) {
+  console.log('FREEDOM BABY');
+}
 
-ageJohn = ageMark = (3 + 5) * 4 - 6;
+if (23 == '23') {
+  console.log('Type coercion is interesting');
+}
 
-ageJohn++;
-ageMark *= 2;
-console.log(ageJohn);
-console.log(ageMark);
+if (23 === '23') {
+  console.log('Type coercion is interesting');
+} else {
+  console.log('This operator does not allow type coercion');
+}
