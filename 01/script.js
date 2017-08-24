@@ -1,40 +1,23 @@
-/* var name = "John";
-console.log(name);
-
-var lastName = "Smith";
-console.log(lastName);
+// Lecture: Operators
 
 var age = 26;
-console.log(age);
+var actualYear = 2017;
+var birthYear = actualYear - age;
 
-var fullAge = true;
-console.log(fullAge); */
+var randomNumber = actualYear - age * 2;
 
-// Lecture: variables 2
+// This precedence was obvious, but its not always like that.
+// http://codingheroes.io/resources/ is a good reference to it
 
-var name = 'John';
-var age = 26;
+console.log(birthYear);
+console.log(randomNumber);
 
-console.log(name + age);
-console.log(age + age);
-console.log(name + true);
+var ageJohn = 30;
+var ageMark = 30;
 
-var job, isMarried;
+ageJohn = ageMark = (3 + 5) * 4 - 6;
 
-console.log(job);
-
-job = 'teacher';
-isMarried = false;
-
-console.log(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried);
-
-age = 'thirty six'
-job = 'driver';
-
-console.log(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried);
-
-var lastName = prompt('What is the last name?');
-
-console.log(lastName);
-
-alert(name + ' is a ' + age + ' years old ' + job + '. Is he married? ' + isMarried);
+ageJohn++;
+ageMark *= 2;
+console.log(ageJohn);
+console.log(ageMark);
