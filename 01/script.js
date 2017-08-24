@@ -1,33 +1,27 @@
-// Lecture if/else and comparisons
+// lecture: Boolean logic and switch statements
 
-var name = 'John';
-var age = 26;
-var isMarried = 'yes';
+var age = 25;
 
-if(isMarried == 'yes') {
-  console.log(name + ' is married!')
+if (age <= 19) {
+  console.log('John is a teenager');
+} else if (age >= 20 && age < 30) {
+  console.log('John is a Young man');
 } else {
-  console.log(name + ' will marry soon.');
+  console.log('John is a man');
 }
 
-isMarried = false;
+var job = prompt('What does John do?');
 
-if(isMarried) {
-  console.log('YES');
-} else {
-  console.log('NO!');
-}
-
-if(!isMarried) {
-  console.log('FREEDOM BABY');
-}
-
-if (23 == '23') {
-  console.log('Type coercion is interesting');
-}
-
-if (23 === '23') {
-  console.log('Type coercion is interesting');
-} else {
-  console.log('This operator does not allow type coercion');
+switch(job) {
+  case 'teacher':
+    console.log('John teaches kids');
+    break;
+  case 'driver':
+    console.log('John Driver a Cab in Lisbon');
+    break;
+  case 'cop':
+    console.log('John fights crime');
+    break;
+  default:
+    console.log('John does something else');
 }
