@@ -1,36 +1,29 @@
-var ageJohn = 24;
-var heightJohn = 172;
+// Lecture functions
 
-var ageFriend = 23;
-var heightFriend = 176;
-
-var ageMark = 25;
-var heightMark = 164;
-
-var johnScore = heightJohn + 4 * ageJohn;
-var friendScore = heightFriend + 4 * ageFriend;
-var markScore = heightMark + 4 * ageMark;
-
-console.log('John Score: ' + johnScore);
-console.log('Friend Score: ' + friendScore);
-console.log('Mark Score:' + markScore);
-
-// First part of challenge
-if (johnScore > friendScore) {
-  alert('John Wins!!!')
-} else if (johnScore === friendScore) {
-  alert('Its a DRAW!')
-} else {
-  alert('John loses! :( )')
+function calculateAge(yearOfBirth) {
+  var age = 2017 - yearOfBirth;
+  return age;
 }
 
-//Second part
-if (johnScore > friendScore && johnScore > markScore) {
-  alert('John Wins!!!')
-} else if (friendScore > johnScore && friendScore > markScore) {
-  alert('Friend wins')
-} else if(markScore > johnScore && markScore > friendScore) {
-  alert('Mark wins')
-} else {
-  alert('IT\'S A DRAW!!!!!')
+var ageJohn = calculateAge(1991);
+var ageMike = calculateAge(1969);
+var ageMary = calculateAge(1948);
+console.log(ageJohn);
+console.log(ageMike);
+console.log(ageMary);
+
+function yearsUntilRetirement(name, year) {
+  var age = calculateAge(year);
+  var retirementAge = 65;
+  var retirement = retirementAge - age;
+  if (retirement > 0) {
+    console.log(name + ' retires in ' + retirement + ' years');
+  } else {
+    console.log(name + ' is already retired for ' + retirement*(-1) + ' years');
+  }
+
 }
+
+yearsUntilRetirement('John', 1990);
+yearsUntilRetirement('Mike', 1969);
+yearsUntilRetirement('Mary', 1948);
