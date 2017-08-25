@@ -1,28 +1,34 @@
-// Lecture: Objects and methods
+// Loops
 
-var john = {
-  name : 'John',
-  lastName : 'Smith',
-  yearOfBirth : 1991,
-  job : 'teacher',
-  isMarried : false,
-  family: ['Jane', 'Mark', 'Bob'],
-  calculateAge: function() {
-    this.age = 2017 - this.yearOfBirth;
+/*
+for (var i = 0; i < 10; i++) {
+  console.log(i);
+}
+*/
+
+var names = ['John', 'Jane', 'Mary', 'Mark', 'Bob'];
+
+/*
+for (var i = 0; i < names.length; i++) {
+  console.log(names[i]);
+}
+
+for (var i = names.length - 1; i >= 0 ; i--) {
+  console.log(names[i]);
+}
+
+var i = 0;
+while (i < names.length) {
+  console.log(names[i]);
+  i++;
+}
+*/
+for (var i = 0; i < 5; i++) {
+  if (i === 2) {
+    continue;
   }
-};
-console.log(john); // Why is age being added to the log in console if
-// at this point the calculateAge method had not been called?
-john.calculateAge();
-console.log(john);
-
-
-var mike = {
-  yearOfBirth: 1950,
-  calculateAge: function() {
-    this.age = 2017 - this.yearOfBirth;
+  console.log(i);
+  if (i === 3) {
+    break;
   }
-};
-
-mike.calculateAge();
-console.log(mike);
+}
