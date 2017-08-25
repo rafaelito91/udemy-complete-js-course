@@ -1,38 +1,34 @@
-// Objects and Properties
+// Lecture: Objects and methods
 
+// The functtion in the object below is basically the same as:
+/*
+var calculateAge = function(yearOfBirth) {
 
-var arr = [1,2,3];
-// In order to access the value 2, you need to user arr[1]. Wouldn't
-// it be better if you could access it by its name, like 'age' for
-// example. Objects do this.
+}
+*/
 
-// Object literal declaration
 var john = {
   name : 'John',
   lastName : 'Smith',
-  yearOfBirth : 1999,
+  yearOfBirth : 1991,
   job : 'teacher',
-  isMarried : false
+  isMarried : false,
+  family: ['Jane', 'Mark', 'Bob'],
+  //Why would a provide yearOfBirth as parameter if the object has it as attribute... so...
+  //calculateAge: function(yearOfBirth) {
+  //  return 2017 - yearOfBirth;
+  //}
+  calculateAge: function() {
+    return 2017 - this.yearOfBirth;
+  }
 };
-// ORDER DOES NOT MATTER
-console.log(john);
-console.log(john.lastName);
-console.log(john['job']);
-
-var xyz = 'yearOfBirth';
-console.log(john[xyz]);
-
-// data mutation
-john.lastName = 'Miller';
-john['job'] = 'programmer';
 
 console.log(john);
+console.log(john.family[2]);
+// console.log(john.calculateAge(1990));  No need for it anymore
+console.log(john.calculateAge());
 
-var jane = new Object();
-jane.name = 'Jane';
-jane.lastName = 'Smith';
-jane['yearOfBirth'] = 1969;
-jane['job'] = 'retired';
-jane['isMarried'] = true;
+var age = john.calculateAge();
+john.age = age;
 
-console.log(jane);
+console.log(john);
