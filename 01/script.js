@@ -1,29 +1,38 @@
-// Lecture: Arrays
+// Objects and Properties
 
-var names = ['John', 'Jane', 'Mark'];
-var years = new Array(1999, 1968, 1948);
 
-console.log(names);
-console.log(names[0]);
+var arr = [1,2,3];
+// In order to access the value 2, you need to user arr[1]. Wouldn't
+// it be better if you could access it by its name, like 'age' for
+// example. Objects do this.
 
-names[1] = 'Ben';
+// Object literal declaration
+var john = {
+  name : 'John',
+  lastName : 'Smith',
+  yearOfBirth : 1999,
+  job : 'teacher',
+  isMarried : false
+};
+// ORDER DOES NOT MATTER
+console.log(john);
+console.log(john.lastName);
+console.log(john['job']);
 
-console.log(names);
+var xyz = 'yearOfBirth';
+console.log(john[xyz]);
 
-var john = ['John', 'Smith', 1990, 'teacher', false];
-
-john.push('blue');
-john.unshift('Mr.');
+// data mutation
+john.lastName = 'Miller';
+john['job'] = 'programmer';
 
 console.log(john);
 
-// Methods
-console.log(john.pop());
-console.log(john.shift());
-console.log(john.indexOf('Smith'));
+var jane = new Object();
+jane.name = 'Jane';
+jane.lastName = 'Smith';
+jane['yearOfBirth'] = 1969;
+jane['job'] = 'retired';
+jane['isMarried'] = true;
 
-if (john.indexOf('teacher') === -1) {
-  console.log('John is not a teacher');
-} else {
-  console.log('John is a teacher');
-}
+console.log(jane);
