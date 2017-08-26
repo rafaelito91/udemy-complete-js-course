@@ -1,27 +1,37 @@
 //Lecture: Scope
 
 /*
-  This access to parent scopes is called scope chain. THere is a chain
-  of scopes that are accessed from the child to its parent.
+  Scope chain is different from execution stack. In this case,
+  the execution stack is
+
+  global -> first -> second -> third
+
+  but the scope chain was
+
+  global -> first -> second
+  global -> third
+
+  which means the third function has no access to the variables of
+  the second and first functions, even thougn they are in the same
+  execution stack.
 */
 
-
-
-// Global scope
-var a = 'Hello!';
+var d = 'Hello!';
 first();
 
-// Local scopes
 function first() {
-  // first function scope
-  // dont have access to variable c, but has access to variable a and b
-  var b = 'Hi!';
+  var e = 'Hi!';
   second();
 
   function second() {
-    // second function scope
-    // has access to variables a b and c
-    var c = 'Hey!';
-    console.log (a + b + c);
+    var f = 'Hey!';
+    third();
   }
+
+}
+
+function third() {
+  var g = 'John';
+  //console.log(f);
+  console.log(d + g);
 }
