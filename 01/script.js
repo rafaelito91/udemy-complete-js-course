@@ -1,37 +1,34 @@
-//Lecture: Scope
+//Lecture: this keyword
 
+/* First example: this keyword in a regular function declaration*/
 /*
-  Scope chain is different from execution stack. In this case,
-  the execution stack is
+console.log(this);
 
-  global -> first -> second -> third
+calculateAge(1985);
 
-  but the scope chain was
-
-  global -> first -> second
-  global -> third
-
-  which means the third function has no access to the variables of
-  the second and first functions, even thougn they are in the same
-  execution stack.
+function calculateAge(year) {
+  console.log(2017 - year);
+  console.log(this);
+}
 */
 
-var d = 'Hello!';
-first();
+/* Second example: this keyword in a method*/
+var john = {
+  name : 'John',
+  yearOfBirth: 1990,
+  calculateAge: function() {
+    console.log(this);
+    console.log(2017 - this.yearOfBirth);
 
-function first() {
-  var e = 'Hi!';
-  second();
+    function innerFunction() {
+      console.log(this);
+      // this will print the window object, because its the rule:
+      // a regular function call will call window, and this is a
+      // regular funcion declaration, even though it is inside a
+      // method
+    }
 
-  function second() {
-    var f = 'Hey!';
-    third();
+    innerFunction();
   }
-
 }
-
-function third() {
-  var g = 'John';
-  //console.log(f);
-  console.log(d + g);
-}
+john.calculateAge();
