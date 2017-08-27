@@ -15,18 +15,32 @@ roundScore = 0;
 activePlayer = 1;
 
 dice = Math.floor(Math.random() * 6) + 1;
-console.log(dice);
-
-// Altering HTML value - setter
 
 document.querySelector('#current-' + activePlayer).textContent = dice;
 //document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>'
 
-
-// Reading HTML value - getter
-
 var x = document.querySelector('#score-0').textContent;
 console.log(x);
 
-// Altering CSS of the component
 document.querySelector('.dice').style.display = 'none';
+
+/*
+  A callback function is a function that is passed as parameter and then
+  called later by another function.
+*/
+
+
+function btn() {
+  //do something here
+}
+
+// Outros exemplos de evento : https://developer.mozilla.org/en-US/docs/Web/Events
+document.querySelector('.btn-roll').addEventListener('click', btn);
+
+// another possibility instead of passing a existing function as parameter
+// you can also define an anonymous function (as in the example below) which
+// is a function
+
+document.querySelector('.btn-roll').addEventListener('click', function() {
+  // do something here
+});
